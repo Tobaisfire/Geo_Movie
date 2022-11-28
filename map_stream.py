@@ -2,10 +2,15 @@ import streamlit as st
 import pandas as pd
 from streamlit_folium import st_folium
 import folium
+import streamlit.components.v1 as components
+import imdb
+  
+# creating instance of IMDb
+ia = imdb.IMDb()
 st. set_page_config(layout="wide")
 
 
-record = pd.read_csv('D:\keval\movie_get\locations.csv')
+record = pd.read_csv('D:\keval\study\Movie_Geomania\Data_Set\locations.csv')
 map_map = folium.Map()
 
 
@@ -21,14 +26,21 @@ def get_option():
     
     return option
 def summary(name):
-    print(name)
+  
     lat_lon = (record[record["movie_tile"]== f"{name}"].lat_lon).to_list()
-    print(lat_lon)
+    code = (record[record["movie_tile"]== f"{name}"].code).to_list()
+
     if lat_lon[0] == 'no':
         pass
 
     else:
         lat_lon = eval(lat_lon[0])
+        series = ia.get_movie(int(code[0][1::]))
+
+  
+        # getting cover url of the series
+        cover = series.data['cover url']
+        components.iframe(f"{cover}")
         st.header(f'Fliming locations of {name}')
         for i in lat_lon.keys():
             st.write(i)
@@ -44,9 +56,6 @@ def map(name):
     else:
         lat_lon = eval(lat_lon[0])
  
-
-
-
 
 # row = eval(cor[4])
         for j in lat_lon.keys():
