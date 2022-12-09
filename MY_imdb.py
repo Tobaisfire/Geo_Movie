@@ -36,7 +36,7 @@ CHROMEDRIVER_PATH ='D:/keval/chromedriver'
 
 ia = imdb.IMDb() 
 
-''' --------------------------------------------------------------------------------For CODE Fetching---------------------------------------------------------------------'''
+''' --------------------------------------------------------------------------------For MOVIE CODE ---------------------------------------------------------------------'''
 
 
 # Url_travel = requests.get(f'https://www.imdb.com/chart/top/?ref_=nv_mv_250')
@@ -52,7 +52,7 @@ ia = imdb.IMDb()
 # record.to_excel('Code.xlsx',index=False)
     
 
-''' --------------------------------------------------------------------------------For Movie_Title Fetching---------------------------------------------------------------------'''
+''' --------------------------------------------------------------------------------For Movie_Title---------------------------------------------------------------------'''
 # def get_title(id_code):
 #     id_code = pd.read_excel('D:\keval\movie_get\Code.xlsx')
 #     code = id_code.iloc[:,0].to_list()
@@ -69,7 +69,7 @@ ia = imdb.IMDb()
     # record = pd.DataFrame({'Movie': movie})
     # record.to_excel('movie.xlsx',index=False)
 
-''' --------------------------------------------------------------------------------For Location Fetching---------------------------------------------------------------------'''
+''' --------------------------------------------------------------------------------For Location---------------------------------------------------------------------'''
 id_code = pd.read_excel('D:\keval\movie_get\Code.xlsx')
 code = id_code.iloc[:,0].to_list()
 
@@ -180,9 +180,6 @@ for i in range(203,len(code)):
 
         record2.to_csv('locations.csv',index=False,mode='a',header=False)
         locm.pop()
-      
-# record = pd.DataFrame({'lat,lon' : coor})
-# record.to_excel('lat_lon.xlsx')
 
 
 
