@@ -1,7 +1,7 @@
 # Movie_GeoMania
 A Software to provide Movies fliming loctaions on Geo map.
 
-#Run map_stream.py 
+# Run map_stream.py 
 
 # Description --------------------------->
 
