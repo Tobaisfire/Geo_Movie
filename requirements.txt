@@ -1,4 +1,3 @@
-selenuim
 imdb
 folium
 pandas
