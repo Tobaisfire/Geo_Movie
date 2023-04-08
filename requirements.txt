@@ -1,1 +1,7 @@
-Streamlit
+selenuim
+imdb
+folium
+pandas
+bs4
+streamlit
+streamlit_folium
